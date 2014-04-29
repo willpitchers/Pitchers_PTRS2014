@@ -158,7 +158,7 @@ In the case of 'effective number of dimensions' all three measures of model fit 
 
 Here are the results of our selected model; filled points for estimates for animals, open points for plants, lines are the extent of the 95% credible intervals from the posterior distribution.
 
-![plot of chunk END_results](../figure/END_results.png) 
+![plot of chunk END_results](../Output/END_results.png) 
 
 
 *Interlude 1*
@@ -176,7 +176,7 @@ The next code block performs the model selection for 'maximum evolvability'. In 
 
 Here are the results of our selected model; filled points for estimates for animals, open points for plants, lines are the extent of the 95% credible intervals from the posterior distribution.
 
-![plot of chunk Emax_results](figure/Emax_results.png) 
+![plot of chunk Emax_results](../Output/Emax_results.png) 
 
 
 The next code block performs the model selection for 'total genetic variance'. In this case the best fitting model as judged by BIC was model2, with the bootstrap supporting model1 and the DIC (Bayesian) approach supporting model3. We opted to select model3. It is worth noting that the estimates from models 2 & 3 were correlated at *r*>0.94. Model3 was: `TGV ~ trait.type + taxon2 + trait.no + random(study.code) + random(species)`.
