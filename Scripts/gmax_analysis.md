@@ -158,7 +158,7 @@ In the case of 'effective number of dimensions' all three measures of model fit 
 
 Here are the results of our selected model; filled points for estimates for animals, open points for plants, lines are the extent of the 95% credible intervals from the posterior distribution.
 
-![plot of chunk END_results](figure/END_results.png) 
+![plot of chunk END_results](../figure/END_results.png) 
 
 
 *Interlude 1*
