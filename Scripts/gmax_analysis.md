@@ -426,7 +426,7 @@ This plots the results of the eveness analysis - as above filled points for esti
 ![plot of chunk Eveness_results](../Output/Eveness_results.png) 
 
 
-This final block of code builds the plots in the form in whiich they appear in the MS.
+This final block of code builds the plots in the form in which they appear in the MS.
 
 
 ```r
