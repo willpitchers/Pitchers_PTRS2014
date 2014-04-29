@@ -228,7 +228,7 @@ The next code block performs the model selection for 'eigenvalue eveness'. For t
 
 Here are the results of our selected model for 'eigenvalue eveness'; filled points for estimates for animals, open points for plants, lines are the extent of the 95% credible intervals from the posterior distribution as above. NB: "high values of E suggest that genetic variance is evenly distributed among the measured traits".
 
-![plot of chunk eveness_results](../Output/eveness_results.png) 
+![plot of chunk eveness_results](../Output/Eveness_results.png) 
 
 
 ----
