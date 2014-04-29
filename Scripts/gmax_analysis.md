@@ -144,7 +144,7 @@ Some descriptive statistics: mean values of metrics and sample sizes by `taxon2`
 
 Figure (4 in the MS); a visualization of the relationships among metrics of **G** structure. Note the strong relationships between *tgv*, *emax*, *gmax* and average evolvability (*e* bar).
 
-![plot of chunk cov_pairs_plot](figure/cov_pairs_plot.png) 
+![plot of chunk cov_pairs_plot](../figure/cov_pairs_plot.png) 
 
 
 In the following code block we perform model selection for our analysis of 'effective number of dimensions'. For each of the metrics we fit a set of 4 models of increasing complexity, with the simplest including main effects of trait type, taxon and trait number, and a random effect of study ID. We first fit the model set with the `lmer()` function which fits mixed models using maximum likelihood. We then use `BICtab()` to evaluate model fit using the Bayesian information criterion. This gives us an order of preference for our 4 models, which we try to confirm by using a parametric bootstrap to obtain a pseudo-p-value for the comparison of the 'best' model with the next best and so on. Lastly, we fit the same set of models using `MCMCglmm()`, which uses a Bayesian markov chain monte carlo approach, and evaulate the model fit using the deviance information criterion. In all cases we specified deliberately uninformative priors, but found that the resulting estimates were robust to choices of alternate priors.
