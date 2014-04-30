@@ -144,7 +144,7 @@ Some descriptive statistics: mean values of metrics and sample sizes by `taxon2`
 
 Figure (4 in the MS); a visualization of the relationships among metrics of **G** structure. Note the strong relationships between *tgv*, *emax*, *gmax* and average evolvability (*e* bar).
 
-![plot of chunk cov_pairs_plot](figure/cov_pairs_plot.png) 
+![plot of chunk cov_pairs_plot](../Output/cov_pairs_plot.png) 
 
 
 In the following code block we perform model selection for our analysis of 'effective number of dimensions'. For each of the metrics we fit a set of 4 models of increasing complexity, with the simplest including main effects of trait type, taxon and trait number, and a random effect of study ID. We first fit the model set with the `lmer()` function which fits mixed models using maximum likelihood. We then use `BICtab()` to evaluate model fit using the Bayesian information criterion. This gives us an order of preference for our 4 models, which we try to confirm by using a parametric bootstrap to obtain a pseudo-p-value for the comparison of the 'best' model with the next best and so on. Lastly, we fit the same set of models using `MCMCglmm()`, which uses a Bayesian markov chain monte carlo approach, and evaulate the model fit using the deviance information criterion. In all cases we specified deliberately uninformative priors, but found that the resulting estimates were robust to choices of alternate priors.
@@ -158,7 +158,7 @@ In the case of 'effective number of dimensions' all three measures of model fit 
 
 Here are the results of our selected model; filled points for estimates for animals, open points for plants, lines are the extent of the 95% credible intervals from the posterior distribution.
 
-![plot of chunk END_results](figure/END_results.png) 
+![plot of chunk END_results](../Output/END_results.png) 
 
 
 *Interlude 1*
@@ -166,7 +166,7 @@ Here are the results of our selected model; filled points for estimates for anim
 At this stage we're comparing the patterns of estimates from models that fit Kirkpatrick's 'effective number of dimensions' either as is (with trait number as a covariate), or scaled by trait number, or scaled by the square of trait number. We encountered a number of suggestions about this from reviewers/colleagues. In particular, the issues is whether we should adjust for trait number in an additive (as a linear covariate) or multiplicative (scaling) fashion. Since there isn't an obviously superior way to deal with the issue, these analyses can be found in the supplmental material for the paper.
 
 
-![plot of chunk comparing_nD_scaling_options](figure/comparing_nD_scaling_options.png) 
+![plot of chunk comparing_nD_scaling_options](../Output/comparing_nD_scaling_options.png) 
 
 
 The next code block performs the model selection for 'maximum evolvability'. In this the best fitting model as judged by BIC was model1, but the DIC (Bayesian) approach supported model3. We opted to select model3; the ∆BIC between the models was <5 and the ∆DIC was mauch larger at ~20. Model3 was: `Emax ~ trait.type + taxon2 + trait.no + random(study.code) + random(species)`.
@@ -176,7 +176,7 @@ The next code block performs the model selection for 'maximum evolvability'. In 
 
 Here are the results of our selected model; filled points for estimates for animals, open points for plants, lines are the extent of the 95% credible intervals from the posterior distribution.
 
-![plot of chunk Emax_results](figure/Emax_results.png) 
+![plot of chunk Emax_results](../Output/Emax_results.png) 
 
 
 The next code block performs the model selection for 'total genetic variance'. In this case the best fitting model as judged by BIC was model2, with the bootstrap supporting model1 and the DIC (Bayesian) approach supporting model3. We opted to select model3. It is worth noting that the estimates from models 2 & 3 were correlated at *r*>0.94. Model3 was: `TGV ~ trait.type + taxon2 + trait.no + random(study.code) + random(species)`.
@@ -191,7 +191,7 @@ The next code block performs the model selection for 'total genetic variance'. I
 
 Here are the results of our selected model for *tgv*; filled points for estimates for animals, open points for plants, lines are the extent of the 95% credible intervals from the posterior distribution.
 
-![plot of chunk TGV_results](figure/TGV_results.png) 
+![plot of chunk TGV_results](../Output/TGV_results.png) 
 
 
 The next code block performs the model selection for *gmax*, the principal eigenvalue of **G**. In this case the best fitting model as judged by BIC and the bootstrap was model2, with the DIC (Bayesian) approach supporting model3. We opted to select model3. It is worth noting that the estimates from models 2 & 3 were correlated at *r*>0.94. Model3 was: `gmax ~ trait.type + taxon2 + trait.no + random(study.code) + random(species)`.
@@ -201,7 +201,7 @@ The next code block performs the model selection for *gmax*, the principal eigen
 
 Here are the results of our selected model for *gmax*; filled points for estimates for animals, open points for plants, lines are the extent of the 95% credible intervals from the posterior distribution.
 
-![plot of chunk gmax_results](figure/gmax_results.png) 
+![plot of chunk gmax_results](../Output/gmax_results.png) 
 
 
 The next code block performs the model selection for 'average evolvability'. In this case the best fitting model as judged by BIC and the bootstrap was model2, with the DIC (Bayesian) approach supporting model3. We opted to select model3. It is worth noting that the estimates from models 2 & 3 were correlated at *r*>0.93. Model3 was: `AEvo ~ trait.type + taxon2 + trait.no + random(study.code) + random(species)`.
@@ -211,14 +211,14 @@ The next code block performs the model selection for 'average evolvability'. In 
 
 Here are the results of our selected model for 'average evolvability'; filled points for estimates for animals, open points for plants, lines are the extent of the 95% credible intervals from the posterior distribution.
 
-![plot of chunk AEvo_results](figure/AEvo_results.png) 
+![plot of chunk AEvo_results](../Output/AEvo_results.png) 
 
 
 *Interlude 2*
 
 At this point we compared the values for 'average evolvability' and *tgv*. The relationship between these two **G** structure metrics is strong, and apparent whether or not we log-transform the values.
 
-![plot of chunk AEvo_vs_TGV_plot](figure/AEvo_vs_TGV_plot.png) 
+![plot of chunk AEvo_vs_TGV_plot](../Output/AEvo_vs_TGV_plot.png) 
 
 
 The next code block performs the model selection for 'eigenvalue eveness'. For this metric the BIC, bootstrap and DIC (Bayesian) approaches were all in agreement in supporting model1, which was: `Even ~ trait.type + taxon2 + trait.no + random(study.code)`.
@@ -228,7 +228,7 @@ The next code block performs the model selection for 'eigenvalue eveness'. For t
 
 Here are the results of our selected model for 'eigenvalue eveness'; filled points for estimates for animals, open points for plants, lines are the extent of the 95% credible intervals from the posterior distribution as above. NB: "high values of E suggest that genetic variance is evenly distributed among the measured traits".
 
-![plot of chunk eveness_results](figure/eveness_results.png) 
+![plot of chunk eveness_results](../Output/Eveness_results.png) 
 
 
 ----
@@ -347,7 +347,7 @@ Some descriptive statistics: mean values of metrics and sample sizes by `taxon2`
 
 Next, a plot to visualize the relationships among the **G** structure metrics calculated from correlation matrices. This appears as Figure % in the paper.
 
-![plot of chunk cor_pairs_plot](figure/cor_pairs_plot.png) 
+![plot of chunk cor_pairs_plot](../Output/cor_pairs_plot.png) 
 
 
 *Interlude 3*
@@ -356,7 +356,7 @@ This interlude produces more output for the supplement. We wanted to plot/tabula
 
 Given the well known issue of over-estimating the principal eigenvalues at the expense of the minor ones when the number of "families" used to estimate G is small (see references in paper), we also examined whether number of families was associated with aspects of eigenvalue eveneness, eccentricity and the like. As we point out in the supplement, we did not observe any strong pattern based on these data.
 
-![plot of chunk more_supplementary_plots](figure/more_supplementary_plots1.png) 
+![plot of chunk more_supplementary_plots](../Output/more_supplementary_plots1.png) 
 
 ```
 ## 
@@ -370,19 +370,19 @@ Given the well known issue of over-estimating the principal eigenvalues at the e
 ## 31 41 36 42 21 21 17  5  4  3
 ```
 
-![plot of chunk more_supplementary_plots](figure/more_supplementary_plots2.png) 
+![plot of chunk more_supplementary_plots](../Output/more_supplementary_plots2.png) 
 
 ```
 ## [1] "END"         "AEvo"        "Even"        "no.families"
 ```
 
-![plot of chunk more_supplementary_plots](figure/more_supplementary_plots3.png) 
+![plot of chunk more_supplementary_plots](../Output/more_supplementary_plots3.png) 
 
 ```
 ## [1] "REV"         "Even"        "Evar"        "no.families"
 ```
 
-![plot of chunk more_supplementary_plots](figure/more_supplementary_plots4.png) 
+![plot of chunk more_supplementary_plots](../Output/more_supplementary_plots4.png) 
 
 
 
@@ -399,7 +399,7 @@ In the case of 'relative eigenvalue variance' all three approaches were in agree
 
 Here are the results of our selected model for 'relative eigenvalue variance'; filled points for estimates for animals, open points for plants, lines are the extent of the 95% credible intervals from the posterior distribution as above.
 
-![plot of chunk REV_results](figure/REV_results.png) 
+![plot of chunk REV_results](../Output/REV_results.png) 
 
 
 For the models of eigenvalue variance, there was less agreement among approaches. The BIC & bootstrap approaches supported model1, but the DIC approach supported model3. The ∆BIC between models 1 & 3 was ~5, whereas the ∆DIC was ~10. We selected model3 which was: `Evar ~ trait.type + taxon + trait.no + random(study.code) + random(species)`.
@@ -413,7 +413,7 @@ For the models of eigenvalue variance, there was less agreement among approaches
 
 Here are the results of our selected model for 'relative eigenvalue variance'; filled points for estimates for animals, open points for plants, lines are the extent of the 95% credible intervals from the posterior distribution as above.
 
-![plot of chunk Eigenvalue_variance_results](figure/Eigenvalue_variance_results.png) 
+![plot of chunk Eigenvalue_variance_results](../Output/Eigenvalue_variance_results.png) 
 
 
 Our next matrix metric is 'eigenvalue eveness'. Model selection was straighforward here, with all three approaches in concordance in supporting model1 as the best fitting. We therefore went with: `Even ~ trait.type + taxon + trait.no +random(study.code)`.
@@ -423,10 +423,10 @@ Our next matrix metric is 'eigenvalue eveness'. Model selection was straighforwa
 
 This plots the results of the eveness analysis - as above filled points for estimates for animals, open points for plants, lines are the extent of the 95% credible intervals from the posterior distribution.
 
-![plot of chunk Eveness_results](figure/Eveness_results.png) 
+![plot of chunk Eveness_results](../Output/Eveness_results.png) 
 
 
-This final block of code builds the plots in the form in whiich they appear in the MS.
+This final block of code builds the plots in the form in which they appear in the MS.
 
 
 ```r
