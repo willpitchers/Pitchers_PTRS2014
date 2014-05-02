@@ -1,7 +1,8 @@
 Pitchers_PTRS2014
 =================
 
-This is the repository for the `R` Code and Data for Pitchers et. al. 2014 soon to be published (we think) in Philosophical Transactions of the royal society. In addition to all of the code and data being here allowing you to reproduce all of the results from the paper (up to the limits of MCMC anyways), it also contains the database we generated on genetic covariance and correlation matrices that we hope will be of broad use to the Evolutionary Quantitative Genetics community. 
+This is the repository for the `R` Code and Data for Pitchers et. al. 2014 soon to be published (Jul 2014) a special issue (Evolutionary Quantitative Genetics) of Philosophical Transactions of the Royal Society. We currently have a pre-print of a version of the manuscript [here on biorxiv](http://dx.doi.org/10.1101/002683). In addition to all of the code and data being here allowing you to reproduce all of the results from the paper (up to the limits of MCMC anyways), it also contains the database we generated on genetic covariance and correlation matrices that we hope will be of broad use to the Evolutionary Quantitative Genetics community. 
+
 Here is a short guide to navigate this folder:
 
 1. For the analyses of evolutionary potential using measures extracted from empirical **G** matrices, you can [review](https://github.com/DworkinLab/Pitchers_PTRS2014/blob/master/Scripts/gmax_analysis.md) or reproduce our analyses. You can also download the [gmax_analysis.R](https://github.com/DworkinLab/Pitchers_PTRS2014/blob/master/Scripts/gmax_analysis.R) file to rerun it on your local machine. This folder also contains the [gmax_analysis.Rmd](https://github.com/DworkinLab/Pitchers_PTRS2014/blob/master/Scripts/gmax_analysis.Rmd) file in case you prefer starting with the markdown + `R` code and want to use [knitr](https://github.com/yihui/knitr).
